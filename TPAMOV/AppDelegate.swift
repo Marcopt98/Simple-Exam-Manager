@@ -13,6 +13,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    var lstUnidadesCurriculares : [UnidadeCurricular] = []{
+        didSet{
+            print("Lista de Unidades Curriculares:")
+            for uc in lstUnidadesCurriculares{
+                print(" - \(uc.getName())")
+                print("Datas: \(uc.getDates())")
+            }
+        }
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -39,6 +48,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        savePlaces();
+    }
+    
+    
+    func savePlaces() {
+        let ucsData = NSKeyedArchiver.archivedData(withRootObject: lstUnidadesCurriculares)
+        UserDefaults.standard.set(ucsData, forKey: "ucs")
     }
 
 

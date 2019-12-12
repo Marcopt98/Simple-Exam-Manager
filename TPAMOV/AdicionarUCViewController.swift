@@ -18,18 +18,14 @@ class AdicionarUCViewController: UIViewController {
     @IBOutlet var TextFieldDateRecurso: UITextField!
     @IBOutlet var TextFieldDateEspecial: UITextField!
     
-    @IBOutlet var AdicionarRoundButton: UIButton!
+    var delegate : RefreshTableView?
+    var selectedUC : UnidadeCurricular?
     
+    @IBAction func onCancel(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     
-    
-    
-    private var datePickerNormal: UIDatePicker?
-    private var datePickerRecurso: UIDatePicker?
-    private var datePickerEspecial: UIDatePicker?
-    
-    @IBAction func AdicionarUC(_ sender: Any) {
-        
-        
+    @IBAction func onSave(_ sender: Any) {
         let nomeUC:String = TextFieldNomeUC.text!
         let ano: Int? = Int(TextFieldAno.text!)
         let semestre: Int? = Int(TextFieldSemestre.text!)
@@ -37,18 +33,54 @@ class AdicionarUCViewController: UIViewController {
         let recurso: String = TextFieldDateRecurso.text!
         let especial: String = TextFieldDateEspecial.text!
         
-        let uc = UnidadeCurricular(nome: nomeUC,ano: ano!,semestre: semestre!,e_normal: normal,e_recurso: recurso,e_especial: especial)
+        if nomeUC.count < 1{
+            TextFieldNomeUC.becomeFirstResponder()
+            return
+        }
         
-        arrayUnidadesCurriculares.append(uc)
+       // let uc = UnidadeCurricular(nome: nomeUC,ano: ano!,semestre: semestre!,e_normal: normal,e_recurso: recurso,e_especial: especial)
+       // let app = UIApplication.shared.delegate as! AppDelegate
+       // app.lstUnidadesCurriculares.append(uc)
+        
+        if let uc = selectedUC{
+            uc.nome = nomeUC
+            uc.ano = ano!
+            uc.semestre = semestre!
+            uc.e_normal = normal
+            uc.e_recurso = recurso
+            uc.e_especial = especial
+        }else{
+            let uc = UnidadeCurricular(nome: nomeUC,ano: ano!,semestre: semestre!,e_normal: normal,e_recurso: recurso,e_especial: especial)
+            let app = UIApplication.shared.delegate as! AppDelegate
+            app.lstUnidadesCurriculares.append(uc)
+        }
+        
+        delegate?.refresh()
+    
+        //navigationController?.popViewController(animated: true)
+        navigationController?.dismiss(animated: true, completion: nil)
     }
+    
+    
+    
+    private var datePickerNormal: UIDatePicker?
+    private var datePickerRecurso: UIDatePicker?
+    private var datePickerEspecial: UIDatePicker?
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        
-        AdicionarRoundButton.layer.cornerRadius = 12.0
-        AdicionarRoundButton.layer.masksToBounds = true
+        if let uc = selectedUC {
+            TextFieldNomeUC.text = uc.nome
+            TextFieldAno.text = "\(uc.ano)"
+            TextFieldSemestre.text = "\(uc.semestre)"
+            TextFieldDateNormal.text = uc.e_normal
+            TextFieldDateRecurso.text = uc.e_recurso
+            TextFieldDateEspecial.text = uc.e_especial
+        }
         
         datePickerNormal = UIDatePicker()
         datePickerRecurso = UIDatePicker()

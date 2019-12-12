@@ -8,45 +8,25 @@
 
 import UIKit
 
-class UnidadeCurricular{
-    var nome:String
-    var ano:Int
-    var semestre:Int
-    var e_normal:String
-    var e_recurso:String
-    var e_especial:String
-    
-    init(nome:String, ano:Int, semestre:Int, e_normal:String, e_recurso:String, e_especial:String) {
-        
-        self.nome = nome
-        self.ano = ano
-        self.semestre = semestre
-        self.e_normal = e_normal
-        self.e_recurso = e_recurso
-        self.e_especial = e_especial
-    }
-    
-    func getName()->String{
-        return "Nome da UC \(nome)"
-    }
-    
-}
-
-var arrayUnidadesCurriculares = [UnidadeCurricular]()
+//var arrayUnidadesCurriculares = [UnidadeCurricular]()
 
 class ViewController: UIViewController {
     
     
     @IBOutlet var Round_image: UIImageView!
     @IBOutlet var AddUC_Button: UIButton!
-    @IBOutlet var ManageExame_Button: UIButton!
+    @IBOutlet weak var ManageExame_Button: UIButton!
+    
+    let app = UIApplication.shared.delegate as! AppDelegate
     
     @IBAction func AddUCViewAction(_ sender: Any) {
         self.performSegue(withIdentifier: "AdicionarUCSegue", sender: self)
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        loadPlaces();
         
         AddUC_Button.layer.cornerRadius = 12.0;
         AddUC_Button.layer.masksToBounds = true;
@@ -57,6 +37,22 @@ class ViewController: UIViewController {
         Round_image.layer.masksToBounds = true;
     
     
+    }
+    
+    
+    
+    func loadPlaces() {
+        guard let uc = UserDefaults.standard.object(forKey: "ucs") as? NSData else {
+            print("'ucs' not found in UserDefaults")
+            return
+        }
+        
+        guard let ucarray = NSKeyedUnarchiver.unarchiveObject(with: uc as Data) as? [UnidadeCurricular] else {
+            print("Could not unarchive from placesData")
+            return
+        }
+        
+        self.app.lstUnidadesCurriculares = ucarray;
     }
 
 

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A9055E2021CC22DE00051B99 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A9055E1E21CC22DE00051B99 /* Model.xcdatamodeld */; };
+		A95C6E6421BB269C001BC4B5 /* UnidadeCurricular.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95C6E6321BB269C001BC4B5 /* UnidadeCurricular.swift */; };
+		A95C6E6821BB29EA001BC4B5 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95C6E6721BB29EA001BC4B5 /* TableViewController.swift */; };
 		A9E1E1FB21A05A67004A94AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E1E1FA21A05A67004A94AE /* AppDelegate.swift */; };
 		A9E1E1FD21A05A67004A94AE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E1E1FC21A05A67004A94AE /* ViewController.swift */; };
 		A9E1E20021A05A67004A94AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9E1E1FE21A05A67004A94AE /* Main.storyboard */; };
@@ -14,10 +17,12 @@
 		A9E1E20521A05A68004A94AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9E1E20321A05A68004A94AE /* LaunchScreen.storyboard */; };
 		A9E1E20D21A05F79004A94AE /* AdicionarUCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E1E20C21A05F79004A94AE /* AdicionarUCViewController.swift */; };
 		A9E1E20F21A0636E004A94AE /* isec-instituto-superior-de-engenharia-de-coimbra-1381788367_big.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A9E1E20E21A0636E004A94AE /* isec-instituto-superior-de-engenharia-de-coimbra-1381788367_big.jpg */; };
-		A9E1E21321A08DF3004A94AE /* GerirExamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E1E21221A08DF3004A94AE /* GerirExamesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A9055E1F21CC22DE00051B99 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		A95C6E6321BB269C001BC4B5 /* UnidadeCurricular.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnidadeCurricular.swift; sourceTree = "<group>"; };
+		A95C6E6721BB29EA001BC4B5 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		A9E1E1F721A05A67004A94AE /* TPAMOV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TPAMOV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9E1E1FA21A05A67004A94AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9E1E1FC21A05A67004A94AE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -27,7 +32,6 @@
 		A9E1E20621A05A68004A94AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A9E1E20C21A05F79004A94AE /* AdicionarUCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdicionarUCViewController.swift; sourceTree = "<group>"; };
 		A9E1E20E21A0636E004A94AE /* isec-instituto-superior-de-engenharia-de-coimbra-1381788367_big.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "isec-instituto-superior-de-engenharia-de-coimbra-1381788367_big.jpg"; path = "Assets.xcassets/isec-instituto-superior-de-engenharia-de-coimbra-1381788367_big.jpg"; sourceTree = "<group>"; };
-		A9E1E21221A08DF3004A94AE /* GerirExamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GerirExamesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,8 +66,10 @@
 			children = (
 				A9E1E1FA21A05A67004A94AE /* AppDelegate.swift */,
 				A9E1E1FC21A05A67004A94AE /* ViewController.swift */,
+				A95C6E6321BB269C001BC4B5 /* UnidadeCurricular.swift */,
 				A9E1E20C21A05F79004A94AE /* AdicionarUCViewController.swift */,
-				A9E1E21221A08DF3004A94AE /* GerirExamesViewController.swift */,
+				A95C6E6721BB29EA001BC4B5 /* TableViewController.swift */,
+				A9055E1E21CC22DE00051B99 /* Model.xcdatamodeld */,
 				A9E1E1FE21A05A67004A94AE /* Main.storyboard */,
 				A9E1E20321A05A68004A94AE /* LaunchScreen.storyboard */,
 				A9E1E20121A05A68004A94AE /* Assets.xcassets */,
@@ -146,9 +152,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9E1E20D21A05F79004A94AE /* AdicionarUCViewController.swift in Sources */,
-				A9E1E21321A08DF3004A94AE /* GerirExamesViewController.swift in Sources */,
 				A9E1E1FD21A05A67004A94AE /* ViewController.swift in Sources */,
 				A9E1E1FB21A05A67004A94AE /* AppDelegate.swift in Sources */,
+				A95C6E6821BB29EA001BC4B5 /* TableViewController.swift in Sources */,
+				A95C6E6421BB269C001BC4B5 /* UnidadeCurricular.swift in Sources */,
+				A9055E2021CC22DE00051B99 /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,6 +305,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4XH46752B8;
 				INFOPLIST_FILE = TPAMOV/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -315,6 +324,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4XH46752B8;
 				INFOPLIST_FILE = TPAMOV/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -348,6 +358,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A9055E1E21CC22DE00051B99 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A9055E1F21CC22DE00051B99 /* Model.xcdatamodel */,
+			);
+			currentVersion = A9055E1F21CC22DE00051B99 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = A9E1E1EF21A05A67004A94AE /* Project object */;
 }

@@ -40,7 +40,7 @@
                                     <color key="titleColor" red="0.60856202410000004" green="0.20592821559999999" blue="0.17052206610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="XTM-ah-V3a" kind="showDetail" id="Ogt-7q-nbA"/>
+                                    <segue destination="3Zs-O7-cNw" kind="showDetail" id="WKR-aD-Pia"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="isec-instituto-superior-de-engenharia-de-coimbra-1381788367_big.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="zc4-77-gm5">
@@ -60,7 +60,7 @@
                     </view>
                     <connections>
                         <outlet property="AddUC_Button" destination="jao-xP-Gwj" id="374-4M-jw7"/>
-                        <outlet property="ManageExame_Button" destination="fbh-Ic-0tg" id="Mf7-dk-u4V"/>
+                        <outlet property="ManageExame_Button" destination="fbh-Ic-0tg" id="dlO-4k-3rE"/>
                         <outlet property="Round_image" destination="zc4-77-gm5" id="GA1-9i-a97"/>
                     </connections>
                 </viewController>
@@ -68,31 +68,84 @@
             </objects>
             <point key="canvasLocation" x="118.84057971014494" y="77.678571428571431"/>
         </scene>
-        <!--Gerir Exames-->
-        <scene sceneID="rfc-Ef-1dv">
+        <!--Gestão de Exames-->
+        <scene sceneID="Xe1-8J-tU6">
             <objects>
-                <viewController title="Gerir Exames" modalTransitionStyle="crossDissolve" id="XTM-ah-V3a" customClass="GerirExamesViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="222-v1-bCU">
+                <tableViewController id="uYu-Jo-Lva" customClass="TableViewController" customModule="TPAMOV" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="OXK-wj-rhW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.60856202410000004" green="0.20592821559999999" blue="0.17052206610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <gestureRecognizers/>
-                        <viewLayoutGuide key="safeArea" id="SgE-4v-AXR"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="itemUnidadeCurricular" textLabel="2Ka-w0-LHw" detailTextLabel="4AJ-gn-PcS" style="IBUITableViewCellStyleSubtitle" id="cRr-gy-9HM">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cRr-gy-9HM" id="Dnz-1J-yO6">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2Ka-w0-LHw">
+                                            <rect key="frame" x="20" y="5" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4AJ-gn-PcS">
+                                            <rect key="frame" x="20" y="25.5" width="44" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
                         <connections>
-                            <outletCollection property="gestureRecognizers" destination="udT-AB-ImF" appends="YES" id="52J-ib-YWT"/>
+                            <outlet property="dataSource" destination="uYu-Jo-Lva" id="5cs-OX-Pwf"/>
+                            <outlet property="delegate" destination="uYu-Jo-Lva" id="ZL1-Zc-Jwb"/>
                         </connections>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Zk1-rO-eoA" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="right" id="udT-AB-ImF">
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Gestão de Exames" id="v8m-ri-hTc">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="PUL-y8-ni8">
+                            <connections>
+                                <action selector="onCancel:" destination="uYu-Jo-Lva" id="0JL-p7-xbN"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Order" id="xkd-06-E6v">
+                            <connections>
+                                <action selector="onOrderAction:" destination="uYu-Jo-Lva" id="wFh-gY-uCu"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="showDetail" id="Da7-zv-Dw8"/>
+                        <segue destination="X4J-ZL-1EW" kind="show" identifier="editUC" id="fHP-Y6-E63"/>
                     </connections>
-                </swipeGestureRecognizer>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SmO-3I-XWW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1069.5652173913045" y="513.61607142857144"/>
+            <point key="canvasLocation" x="1583" y="929"/>
         </scene>
-        <!--Adicionar Unidades Curriculares-->
+        <!--Navigation Controller-->
+        <scene sceneID="VyT-Xg-QhZ">
+            <objects>
+                <navigationController id="3Zs-O7-cNw" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="imk-rj-ZHO">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="uYu-Jo-Lva" kind="relationship" relationship="rootViewController" id="sMI-A3-0v3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EzQ-vq-5j9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="355" y="887"/>
+        </scene>
+        <!--Adicionar UC-->
         <scene sceneID="bUW-cJ-Krf">
             <objects>
                 <viewController modalTransitionStyle="crossDissolve" id="X4J-ZL-1EW" customClass="AdicionarUCViewController" customModule="TPAMOV" customModuleProvider="target" sceneMemberID="viewController">
@@ -191,19 +244,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AKM-f3-qVr">
-                                <rect key="frame" x="285" y="731" width="109" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <state key="normal" title="Adicionar">
-                                    <color key="titleColor" red="0.60856202410000004" green="0.20592821559999999" blue="0.17052206610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="AdicionarUC:" destination="X4J-ZL-1EW" eventType="touchUpInside" id="gay-jE-X5O"/>
-                                    <segue destination="BYZ-38-t0r" kind="showDetail" id="qeP-Gd-Hww"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.60856202410000004" green="0.20592821559999999" blue="0.17052206610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
@@ -212,9 +252,22 @@
                             <outletCollection property="gestureRecognizers" destination="EMx-Ka-GCI" appends="YES" id="egp-qZ-DQk"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="Adicionar Unidades Curriculares" id="qr7-5o-wR9"/>
+                    <navigationItem key="navigationItem" title="Adicionar UC" id="qr7-5o-wR9">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="Pjq-l2-ddY"/>
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="Z34-ue-DFL">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="onCancel:" destination="X4J-ZL-1EW" id="OFM-xA-c5C"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="bdI-Ze-rzV">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="onSave:" destination="X4J-ZL-1EW" id="3ge-oI-dlJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="AdicionarRoundButton" destination="AKM-f3-qVr" id="oH8-1C-Cs0"/>
                         <outlet property="TextFieldAno" destination="f0P-kh-BTC" id="uRx-7u-7ft"/>
                         <outlet property="TextFieldDateEspecial" destination="2Jp-OB-Rez" id="FDP-nH-LAw"/>
                         <outlet property="TextFieldDateNormal" destination="R9m-wM-xd6" id="xH1-Tg-wXm"/>
@@ -230,7 +283,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1986.9565217391305" y="158.70535714285714"/>
+            <point key="canvasLocation" x="1871" y="145"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oa4-EA-2uh">
@@ -255,6 +308,6 @@
         <image name="isec-instituto-superior-de-engenharia-de-coimbra-1381788367_big.jpg" width="200" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Da7-zv-Dw8"/>
+        <segue reference="fHP-Y6-E63"/>
     </inferredMetricsTieBreakers>
 </document>
